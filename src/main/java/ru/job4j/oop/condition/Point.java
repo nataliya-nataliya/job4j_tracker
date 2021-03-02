@@ -23,9 +23,5 @@ public class Point {
         double dist = a.distance(b);
         System.out.println(dist);
 
-        Point c = new Point(3, 4);
-        Point d = new Point(0, 0);
-        double dist1 = c.distance(d);
-        System.out.println(dist1);
     }
 }
