@@ -38,6 +38,5 @@ public class Point {
         Point c = new Point(0, 3);
         double dist3d = b.distance3d(c);
         System.out.println(dist3d);
-
     }
 }
