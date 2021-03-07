@@ -33,7 +33,6 @@ public class Library {
                System.out.println(a.getName() + " - " + a.getPages() + " p.");
            }
         }
-
     }
 }
 

@@ -24,8 +24,4 @@ public class Book {
     public void setPages(short pages) {
         this.pages = pages;
     }
-
-
-
-
 }
