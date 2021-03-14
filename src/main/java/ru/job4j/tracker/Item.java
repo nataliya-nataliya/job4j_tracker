@@ -1,14 +1,6 @@
 package ru.job4j.tracker;
 
 public class Item {
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
     private int id;
     private String name;
 
@@ -26,5 +18,12 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
