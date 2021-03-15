@@ -12,7 +12,6 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            turn = !turn;
             if (matches > 0 && matches < 4) {
                 if (matches > count) {
                     System.out.println("Нельзя взять больше спичек, чем на столе");
@@ -20,6 +19,7 @@ public class Matches {
                 else {
                     count = count - matches;
                     System.out.println(count + " спички(ек) осталось на столе");
+                    turn = !turn;
                 }
             }
             else {
