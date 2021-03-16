@@ -19,14 +19,14 @@ public class Tracker {
         int newSize = 0;
         for (int index = 0; index < size; index++) {
             Item item = this.items[index];
-            if(item.getName() == key) {
+            if(item.getName().equals(key)) {
                 rsl[newSize++] = item;
             }
         }
         return Arrays.copyOf(rsl, newSize);
     }
     public Item[] findAll() {
-            return Arrays.copyOf(items, size);
+        return Arrays.copyOf(items, size);
     }
 
     public Item findById(int id) {
