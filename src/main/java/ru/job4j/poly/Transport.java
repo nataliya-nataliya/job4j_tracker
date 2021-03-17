@@ -5,3 +5,4 @@ public interface Transport {
     void passengers(int number);
     int price(int fuel);
 }
+
