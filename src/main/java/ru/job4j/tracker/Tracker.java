@@ -8,13 +8,23 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
         return item;
     }
     public Item[] findByName(String key) {
-        //Item rsl = null;
         Item[] rsl = new Item[size];
         int newSize = 0;
         for (int index = 0; index < size; index++) {
@@ -30,14 +40,19 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        Item rsl = null;
-        for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
-                break;
-            }
+        /* Находим индекс */
+        int index = indexOf(id);
+        /* Если индекс найден возвращаем item, иначе null */
+        return index != -1 ? items[index] : null;
+    }
+    public boolean replace(int id, Item item) {
+        int i = indexOf(id);
+        if (i == id) {
+            return false;
         }
-        return rsl;
+        else{
+            items[i].setName(item.getName());
+            return true;
+        }
     }
 }
