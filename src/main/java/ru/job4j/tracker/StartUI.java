@@ -10,6 +10,11 @@ public class StartUI {
         item.setName("application");
         tracker.add(item);
         System.out.println(Arrays.toString(tracker.findByName("application")));
+
+        Item item1 = new Item();
+        item1.setName("application1");
+        tracker.add(item1);
+        System.out.println(Arrays.toString(tracker.findByName("application1")));
     }
 }
 
