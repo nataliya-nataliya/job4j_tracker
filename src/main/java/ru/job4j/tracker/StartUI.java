@@ -17,6 +17,7 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
+                System.out.println("Item named: " + name + " was created");
             }
             else if (select == 1) {
                 System.out.println("=== Show all items ===");
@@ -32,7 +33,6 @@ public class StartUI {
                 System.out.print("Enter new name: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
-                tracker.replace(id, item);
                 if (tracker.replace(id, item)) {
                     System.out.println("Item id " + id + " was edited on " + name);
                 } else {
