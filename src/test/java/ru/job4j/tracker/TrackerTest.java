@@ -29,7 +29,7 @@ public class TrackerTest {
         tracker.delete(id);
         assertThat(tracker.findById(id), is(nullValue()));
     }
-/*    @Test
+    @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
         Item item = new Item();
@@ -37,5 +37,5 @@ public class TrackerTest {
         tracker.add(item);
         //Item result = tracker.findById(item.getId());
       //  assertThat(result.getName(), is(item.getName()));
-    }*/
+    }
 }
