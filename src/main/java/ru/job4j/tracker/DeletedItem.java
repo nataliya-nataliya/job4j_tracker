@@ -2,6 +2,12 @@ package ru.job4j.tracker;
 
 public class DeletedItem implements UserAction{
 
+    private final Output output;
+
+    public DeletedItem(Output output) {
+        this.output = output;
+    }
+
     @Override
     public String name(){
        return "Delete item";
@@ -19,3 +25,4 @@ public class DeletedItem implements UserAction{
         return true;
     }
 }
+

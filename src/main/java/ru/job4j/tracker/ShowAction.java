@@ -2,6 +2,12 @@ package ru.job4j.tracker;
 
 public class ShowAction  implements UserAction{
 
+    private  final Output output;
+
+    public ShowAction(Output output) {
+        this.output = output;
+    }
+
     @Override
     public String name() {
         return "Show all items";
@@ -17,3 +23,4 @@ public class ShowAction  implements UserAction{
         return true;
     }
 }
+
