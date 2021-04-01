@@ -15,12 +15,12 @@ public class DeletedItem implements UserAction{
 
     @Override
     public boolean execute (Input input, Tracker tracker) {
-        System.out.println("=== Delete item ===");
+        output.println("=== Delete item ===");
         int id = input.askInt("Enter id: ");
         if (tracker.delete(id)) {
-            System.out.println("Item id " + id + " was deleted");
+            output.println("Item id " + id + " was deleted");
         } else {
-            System.out.println("Id doesn't exist");
+            output.println("Id doesn't exist");
         }
         return true;
     }

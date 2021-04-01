@@ -15,7 +15,7 @@ public class ExitProgram implements UserAction{
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("Program completed");
+        output.println("Program completed");
         return false;
     }
 }

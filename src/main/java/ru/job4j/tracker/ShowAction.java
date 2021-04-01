@@ -15,10 +15,10 @@ public class ShowAction  implements UserAction{
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Show all items ===");
+        output.println("=== Show all items ===");
         Item[] items = tracker.findAll();
         for (Item item : items) {
-            System.out.println(item);
+            output.println(item);
         }
         return true;
     }
