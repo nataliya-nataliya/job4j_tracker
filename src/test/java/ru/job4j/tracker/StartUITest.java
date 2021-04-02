@@ -46,17 +46,19 @@ public class StartUITest {
     public void whenShowAction() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
+        Item item1 = tracker.add(new Item("Item name1"));
+        //Item item2 = tracker.add(new Item("Item name2"));
         Input in = new StubInput(
-                new String[]{"0", "Item name", "0", "Item name2", "1", "2"}
+                new String[]{"0", "1"}
         );
         UserAction[] actions = {
-                new CreateAction(out),
+                //new CreateAction(out),
                 new ShowAction(out),
                 new ExitProgram(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(tracker.findAll()[0].getName(), is("Item name"));
-        assertThat(tracker.findAll()[1].getName(), is("Item name2"));
+        assertThat(out.toString(),tracker.findAll(), is(item1));
+        //assertThat(tracker.findAll()[1].getName(), is("Item name2"));
     }
 
     @Test
