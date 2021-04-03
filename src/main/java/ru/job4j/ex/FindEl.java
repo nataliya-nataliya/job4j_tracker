@@ -8,7 +8,8 @@ public class FindEl {
                 rsl = i;
                 break;
             }
-            else {throw new ElementNotFoundException("Element not found");
+            else {
+                throw new ElementNotFoundException("Element not found");
             }
         }
         return rsl;
