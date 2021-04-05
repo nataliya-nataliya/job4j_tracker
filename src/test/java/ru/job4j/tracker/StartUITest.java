@@ -11,9 +11,9 @@ public class StartUITest {
     public void whenFindByName() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        tracker.add(new Item("Item name1"));
+        Item item = tracker.add(new Item("Item name1"));
         Input in = new StubInput(
-                new String[]{"0", "Item name1", "1",}
+                new String[]{"0", item.getName(), "1",}
         );
         UserAction[] actions = {
                 new FindByName(out),
@@ -25,7 +25,7 @@ public class StartUITest {
                         "0. Find items by name" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
                         "=== Find items by name ====" + System.lineSeparator() +
-                        "Item{id=1, name='Item name1'}" + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find items by name" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
@@ -37,9 +37,9 @@ public class StartUITest {
     public void whenFindByID() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        tracker.add(new Item("Item name1"));
+        Item item = tracker.add(new Item("Item name1"));
         Input in = new StubInput(
-                new String[]{"0", "1", "1"}
+                new String[]{"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
                 new FindById(out),
@@ -51,7 +51,7 @@ public class StartUITest {
                         "0. Find item by Id" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
                         "=== Find item by Id ===" + System.lineSeparator() +
-                        "Item{id=1, name='Item name1'}" + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find item by Id" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
@@ -63,7 +63,7 @@ public class StartUITest {
     public void whenShowAction() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        tracker.add(new Item("Item name1"));
+        Item item = tracker.add(new Item("Item name1"));
         Input in = new StubInput(
                 new String[]{"0", "1"}
         );
@@ -77,7 +77,7 @@ public class StartUITest {
         "0. Show all items" + System.lineSeparator() +
         "1. Exit" + System.lineSeparator() +
          "=== Show all items ===" + System.lineSeparator() +
-        "Item{id=1, name='Item name1'}" + System.lineSeparator() +
+        item + System.lineSeparator() +
         "Menu." + System.lineSeparator() +
         "0. Show all items" + System.lineSeparator() +
         "1. Exit" + System.lineSeparator() +
