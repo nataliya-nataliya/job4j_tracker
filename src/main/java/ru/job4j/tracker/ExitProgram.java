@@ -20,4 +20,3 @@ public class ExitProgram implements UserAction{
     }
 }
 
-

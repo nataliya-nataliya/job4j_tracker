@@ -15,38 +15,30 @@ public final class SingleTracker {
 
     };
 
-    /* реализовать singleton */
-
     public Item add(Item item) {
+
         return tracker.add(item);
     }
 
     public Item findById(int id) {
-        return null;
+
+        return tracker.findById(id);
     }
 
-    public Item findByName(Item[] found) {
-        return null;
+    public Item[] findByName(String name) {
+        return tracker.findByName(name);
     }
 
-    public Item deletedItem(int id) {
-        return null;
+    public boolean deletedItem(int id) {
+        return tracker.delete(id);
     }
 
-    public  Item editItemAction(int id, Item item){
-        return null;
-
-    }
-
-    public  Item showAction(Item[] items){
-        return null;
+    public  boolean editItemAction(int id, Item item){
+        return tracker.replace(id, item);
 
     }
 
-    public void exitProgram() {
-
+    public  Item[] showAction(){
+        return tracker.findAll();
     }
-
-
-    /* Остальные методы из класса Tracker. */
 }
