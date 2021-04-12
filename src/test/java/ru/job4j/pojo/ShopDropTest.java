@@ -28,3 +28,4 @@ public class ShopDropTest {
         assertThat(rsl[1], is(nullValue()));
     }
 }
+
