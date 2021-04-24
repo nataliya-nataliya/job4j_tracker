@@ -7,5 +7,3 @@ public class ConsoleOutput implements Output{
     }
 }
 
-
-
