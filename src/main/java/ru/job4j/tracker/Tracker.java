@@ -27,17 +27,15 @@ public class Tracker {
     }
     public List<Item> findByName(String key) {
         List<Item> rsl = new ArrayList<>();
-        for (int index = 0; index < items.size(); index++) {
-            Item item = this.items.get(index);
-            if(item.getName().equals(key)) {
-                rsl.add(item);
+        for (Item index : items) {
+            if(index.getName().equals(key)) {
+            rsl.add(index);
             }
         }
         return rsl;
     }
         public List<Item> findAll() {
-            List<Item> rsl = items;
-            return rsl;
+            return List.copyOf(items);
     }
 
     public Item findById(int id) {
