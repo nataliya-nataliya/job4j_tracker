@@ -21,3 +21,4 @@ public class UniqueTextTest {
         assertThat(UniqueText.isEquals(origin, text), is(false));
     }
 }
+
