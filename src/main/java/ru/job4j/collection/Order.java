@@ -36,4 +36,3 @@ public class Order {
         return Objects.hash(number, name);
     }
 }
-
