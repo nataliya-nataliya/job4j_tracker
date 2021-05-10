@@ -52,12 +52,10 @@ public class BankService {
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         Account destAccount = findByRequisite(destPassport, destRequisite);
 
-        if(srcAccount != null ) {
-            if (srcAccount.getBalance() >= amount && destAccount != null) {
+            if (srcAccount != null && srcAccount.getBalance() >= amount && destAccount != null) {
                 srcAccount.setBalance(srcAccount.getBalance() - amount);
                 destAccount.setBalance(destAccount.getBalance() + amount);
             }
-        }
         return rsl;
     }
 
