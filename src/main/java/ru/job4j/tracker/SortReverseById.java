@@ -6,6 +6,6 @@ public class SortReverseById implements Comparator<Item> {
 
     @Override
     public int compare(Item first, Item second) {
-        return Integer.valueOf(second.getId()).compareTo(Integer.valueOf(first.getId()));
+        return Integer.compare(second.getId(), first.getId());
     }
 }
