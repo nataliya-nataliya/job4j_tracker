@@ -16,7 +16,7 @@ public class User implements Comparable<User>{
     public int compareTo(User o) {
         int names = this.name.compareTo(o.name);
         if(names == 0) {
-            return this.age - o.age;
+            return Integer.compare(this.age, o.age);
         }
         return names;
     }
