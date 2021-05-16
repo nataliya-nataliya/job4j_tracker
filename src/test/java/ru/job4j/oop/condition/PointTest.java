@@ -14,6 +14,7 @@ public class PointTest {
         double rsl = a.distance(b);
         assertThat(rsl, closeTo(5, 0.001));
     }
+
     @Test
     public void distance1() {
         Point a = new Point(0, 1);
@@ -21,17 +22,19 @@ public class PointTest {
         double rsl = a.distance(b);
         assertThat(rsl, closeTo(1, 0.001));
     }
+
     @Test
     public void distance3d() {
-        Point c = new Point(0,4, 0);
-        Point d = new Point(0,0, 3);
+        Point c = new Point(0, 4, 0);
+        Point d = new Point(0, 0, 3);
         double dist3d = c.distance3d(d);
         assertThat(dist3d, closeTo(5, 0.001));
     }
+
     @Test
     public void distance3dy() {
-        Point c = new Point(0,4, 0);
-        Point d = new Point(0,2, 0);
+        Point c = new Point(0, 4, 0);
+        Point d = new Point(0, 2, 0);
         double dist3d = c.distance3d(d);
         assertThat(dist3d, closeTo(2, 0.001));
     }

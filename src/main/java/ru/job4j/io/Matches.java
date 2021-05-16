@@ -15,14 +15,12 @@ public class Matches {
             if (matches > 0 && matches < 4) {
                 if (matches > count) {
                     System.out.println("Нельзя взять больше спичек, чем на столе");
-                }
-                else {
+                } else {
                     count = count - matches;
                     System.out.println(count + " спички(ек) осталось на столе");
                     turn = !turn;
                 }
-            }
-            else {
+            } else {
                 System.out.println(player + " Нельзя брать более 3х спичек.");
             }
         }

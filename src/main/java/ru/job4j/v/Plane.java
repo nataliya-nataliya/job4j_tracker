@@ -1,6 +1,6 @@
 package ru.job4j.v;
 
-public class Plane implements Vehicle{
+public class Plane implements Vehicle {
 
     @Override
     public void move() {

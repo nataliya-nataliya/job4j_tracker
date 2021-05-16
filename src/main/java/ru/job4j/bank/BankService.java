@@ -10,12 +10,12 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        users.putIfAbsent(user,new ArrayList<>());
+        users.putIfAbsent(user, new ArrayList<>());
     }
 
     public void addAccount(String passport, Account account) {
         User searchUser = findByPassport(passport);
-        if(searchUser != null) {
+        if (searchUser != null) {
             List<Account> userAccount = users.get(searchUser);
             if (!userAccount.contains(account)) {
                 userAccount.add(account);
@@ -32,11 +32,10 @@ public class BankService {
         return null;
     }
 
-
     public Account findByRequisite(String passport, String requisite) {
 
         User user = findByPassport(passport);
-        if(user != null) {
+        if (user != null) {
             for (Account acc : users.get(user)) {
                 if (requisite.equals(acc.getRequisite())) {
                     return acc;

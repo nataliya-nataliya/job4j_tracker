@@ -37,6 +37,6 @@ public class UserTest {
                 .compareTo(
                         new User("Petr", 31)
                 );
-        Assert.assertEquals(1,rsl);
+        Assert.assertEquals(1, rsl);
     }
 }

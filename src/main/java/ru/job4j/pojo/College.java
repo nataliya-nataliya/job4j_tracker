@@ -10,7 +10,9 @@ public class College {
         student.setPatronymic("Ivanovich");
         student.setGroup("ABC");
         student.setReceipt(new Date());
-        System.out.println(student.getSurname() + " " + student.getName() + " " + student.getPatronymic() + " is a student of the group " + student.getGroup());
+        System.out.println(student.getSurname() + " " + student.getName()
+                + " " + student.getPatronymic() + " is a student of the group "
+                + student.getGroup());
 
     }
 }

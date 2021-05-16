@@ -6,6 +6,7 @@ public class Student {
         System.out.println("I can sign a song : " + lyrics);
         //System.out.println("Tra tra tra");
     }
+
     public void song() {
         System.out.println("I believe I can fly");
     }

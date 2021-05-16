@@ -26,12 +26,12 @@ public class Library {
             Book a = books[i];
             System.out.println(a.getName() + " - " + a.getPages() + " p.");
         }
-        System.out.println( "The name of books: Clean code");
+        System.out.println("The name of books: Clean code");
         for (int i = 0; i < books.length; i++) {
             Book a = books[i];
-           if (a.getName().equals("Clean code")) {
-               System.out.println(a.getName() + " - " + a.getPages() + " p.");
-           }
+            if (a.getName().equals("Clean code")) {
+                System.out.println(a.getName() + " - " + a.getPages() + " p.");
+            }
         }
     }
 }

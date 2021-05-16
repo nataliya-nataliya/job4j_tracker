@@ -32,12 +32,13 @@ public class Item implements Comparable<Item> {
     public void setName(String name) {
         this.name = name;
     }
+
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return "Item{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + '}';
     }
 
     @Override

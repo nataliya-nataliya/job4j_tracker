@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class SingleTracker {
+
+    private static SingleTracker instance = null;
+
     private Tracker tracker = new Tracker();
 
-    public  static SingleTracker instance  = null;
+    private SingleTracker() {
+
+    }
 
     public static SingleTracker getInstance() {
         if (instance == null) {
@@ -14,9 +19,6 @@ public final class SingleTracker {
         }
         return instance;
     }
-    private SingleTracker() {
-
-    };
 
     public Item add(Item item) {
 
@@ -36,12 +38,12 @@ public final class SingleTracker {
         return tracker.delete(id);
     }
 
-    public  boolean editItemAction(int id, Item item){
+    public boolean editItemAction(int id, Item item) {
         return tracker.replace(id, item);
 
     }
 
-    public  List<Item> showAction(){
+    public List<Item> showAction() {
         return tracker.findAll();
     }
 }
