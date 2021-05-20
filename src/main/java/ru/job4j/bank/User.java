@@ -2,6 +2,12 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс содержит поля паспорта, имени пользователя, методы hashCode и equals
+ * @author Nataliya
+ * @version 1.0
+ */
+
 public class User {
 
     private String passport;

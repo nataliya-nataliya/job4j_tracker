@@ -5,13 +5,36 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Класс описывает работу банковской системы
+ * @author Nataliya
+ * @version 1.0
+ */
+
 public class BankService {
 
+    /**
+     * Хранение данных пользователя и его реквизитов осуществляется в коллекции типа HashMap
+     */
+
     private Map<User, List<Account>> users = new HashMap<>();
+
+    /**
+     * Метод добавляет нового пользователя в систему
+     * Если такой пользователь уже есть, то пользователь не добавляется
+     * @param user пользователь, который добавляется в систему
+     */
 
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<>());
     }
+
+    /**
+     * Метод присваивает новый счет пользователю. Если такого счета нет, то счет добавляется
+     * Поиск пользователя осуществляется по паспорту
+     * @param passport паспорт пользователя
+     * @param account счет пользователя
+     */
 
     public void addAccount(String passport, Account account) {
         User searchUser = findByPassport(passport);
@@ -23,6 +46,12 @@ public class BankService {
         }
     }
 
+    /**
+     * Метод ищет пользователя по номеру паспорта
+     * @param passport паспорт пользователя
+     * @return пользователя или null, если паспорт не найден
+     */
+
     public User findByPassport(String passport) {
         for (User user : users.keySet()) {
             if (passport.equals(user.getPassport())) {
@@ -31,6 +60,13 @@ public class BankService {
         }
         return null;
     }
+
+    /**
+     * Метод ищет счет пользователя по реквизитам
+     * @param passport паспорт пользователя
+     * @param requisite реквизиты пользователя
+     * @return счет пользователя или null, если реквизиты не найдены
+     */
 
     public Account findByRequisite(String passport, String requisite) {
 
@@ -44,6 +80,17 @@ public class BankService {
         }
         return null;
     }
+
+    /**
+     * Метод для перевода денег с одного счёта на другой счёт
+     * @param srcPassport паспорт пользователя, с которого переводят сумму
+     * @param srcRequisite реквизиты пользователя, с которого переводят сумму
+     * @param destPassport паспорт пользователя, которому переводят сумму
+     * @param destRequisite реквизиты пользователя, которому переводят сумму
+     * @param amount сумма, которую переводит пользователь
+     * @return если перевод совершился, то "true"; если счет не найден или сумма для перевода
+     * недостаточна, то "false"
+     */
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
