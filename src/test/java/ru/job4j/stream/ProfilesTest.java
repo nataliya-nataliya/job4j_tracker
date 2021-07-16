@@ -17,9 +17,8 @@ public class ProfilesTest {
                 new Profile(addr2)
         );
         Profiles prof = new Profiles();
-        assertThat(prof.collect(list).toString(), is(
-                "[Address{city='Moscow', street='Pushkina', home=4, apartment=9},"
-                + " Address{city='Kazan'', street='Lenina', home=90, apartment=123}]"));
+        assertThat(prof.collect(list), is(
+                List.of(addr1, addr2)));
 
     }
 
@@ -34,8 +33,7 @@ public class ProfilesTest {
                 new Profile(addr3)
         );
         Profiles prof = new Profiles();
-        assertThat(prof.dubcollect(list).toString(), is(
-                "[Address{city='Kazan'', street='Lenina', home=90, apartment=123},"
-                        + " Address{city='Moscow', street='Pushkina', home=4, apartment=9}]"));
+        assertThat(prof.dubcollect(list), is(
+                List.of(addr2, addr1)));
     }
 }
